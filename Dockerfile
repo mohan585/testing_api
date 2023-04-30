@@ -6,9 +6,15 @@ RUN pip install waitress
 
 WORKDIR /app
 
+EXPOSE $PORT
+
+ENV PORT $PORT
+
+
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["waitress-serve", "--port", "$PORT", "main:app"]
+CMD ["waitress-serve", "--port=$PORT", "myapp:app"]
