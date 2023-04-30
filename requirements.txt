@@ -3,4 +3,4 @@ tabula-py
 pandas
 PyMuPDF
 pymongo
-waitress
+gunicorn
