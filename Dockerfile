@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["waitress-serve", "--port=$PORT", "main:create_app"]
+CMD ["waitress-serve", "--port=$PORT", "main:app"]
