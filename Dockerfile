@@ -1,14 +1,12 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-slim
 
-RUN apt-get update && apt-get install -y openjdk-11-jre-headless && apt-get clean
-
-RUN pip install waitress
+RUN apt-get update && \
+    apt-get install -y default-jdk
 
 WORKDIR /app
-
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["waitress-serve", "--port=$PORT", "main:app"]
+CMD ["python", "main.py"]
