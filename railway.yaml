@@ -1,2 +1,4 @@
 build:
   dockerfile: Dockerfile
+envs:
+  PORT: 8080
