@@ -6,11 +6,9 @@ RUN pip install waitress
 
 WORKDIR /app
 
-EXPOSE $PORT
-
 ENV PORT 8080
 
-
+EXPOSE $PORT
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
